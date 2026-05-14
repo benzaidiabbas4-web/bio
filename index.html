@@ -58,10 +58,11 @@
             box-shadow: 0 4px 14px rgba(255,255,255,0.1);
         }
 
-        .profile-img {
+        .profile-logo {
             width: 100%;
             height: 100%;
             object-fit: cover;
+            display: block;
         }
 
         h1 {
@@ -144,13 +145,19 @@
             flex-shrink: 0;
             width: 110px;
             height: 110px;
-        }
-
-        .pc-image {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
+            overflow: hidden;
             border-radius: 10px;
+            background: #0f172a; /* optional background */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .product-img {
+           width: 100%;
+           height: 100%;
+           object-fit: cover;
+           border-radius: 10px;
+           display: block;
         }
 
         /* Small Editor's Pick Logo Badge */
