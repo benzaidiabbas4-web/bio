@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ClassicTechPork Links</title>
+    <style>
+        :root {
+            --bg-color: #0c111e;
+            --main-card-bg: #141b2e;
+            --text-color: #e2e8f0;
+            --text-muted: #94a3b8;
+            --accent-glow: rgba(59, 130, 246, 0.2);
+            --border-color: #262c3e;
+            --font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            
+            /* Affiliate Section Colors */
+            --affiliate-card-bg: linear-gradient(135deg, #162447 0%, #1e293b 100%);
+            --cta-gradient: linear-gradient(135deg, #328af1 0%, #e87e43 100%);
+            --glow-color: rgba(232, 126, 67, 0.4);
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: var(--font-family);
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-start;
+            min-height: 100vh;
+            box-sizing: border-box;
+        }
+
+        .phone-container {
+            width: 100%;
+            max-width: 480px;
+            background-color: var(--main-card-bg);
+            border-radius: 40px;
+            padding: 40px 20px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+            text-align: center;
+            border: 1px solid var(--border-color);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        /* Profile Section */
+        .profile-img-container {
+            width: 96px;
+            height: 96px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 4px solid #fff;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 14px rgba(255,255,255,0.1);
+        }
+
+        .profile-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        h1 {
+            font-size: 1.4rem;
+            margin: 0 0 10px 0;
+            font-weight: 700;
+        }
+
+        .bio {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 30px;
+            line-height: 1.5;
+            max-width: 90%;
+        }
+
+        /* Standard Links Container */
+        .standard-links {
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 30px;
+        }
+
+        .link-card {
+            background-color: #0a0e1a;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: background-color 0.2s ease, transform 0.2s ease;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .link-card:hover {
+            background-color: #1a2235;
+            transform: translateY(-2px);
+            border-color: #334155;
+        }
+
+        /* NEW: Affiliate Offer Card Section */
+        .affiliate-section {
+            width: 100%;
+            margin-top: 10px;
+            border-radius: 20px;
+            overflow: hidden;
+            background: var(--affiliate-card-bg);
+            border: 2px solid #2d3e5e;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            text-align: left;
+            padding: 20px;
+            box-sizing: border-box;
+        }
+
+        .affiliate-header {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            color: #7dd3fc;
+            letter-spacing: 1px;
+            font-weight: 700;
+            margin-bottom: 16px;
+            text-align: center;
+        }
+
+        .affiliate-content {
+            display: flex;
+            align-items: flex-start;
+            gap: 16px;
+            margin-bottom: 20px;
+        }
+
+        .pc-image-wrapper {
+            position: relative;
+            flex-shrink: 0;
+            width: 110px;
+            height: 110px;
+        }
+
+        .pc-image {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+            border-radius: 10px;
+        }
+
+        /* Small Editor's Pick Logo Badge */
+        .editors-pick-badge {
+            position: absolute;
+            top: -5px;
+            left: -5px;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background-color: #000;
+            border: 2px solid #4ade80; /* Green highlight */
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 1;
+        }
+        
+        .editors-pick-badge img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .offer-details {
+            flex-grow: 1;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #d1d5db;
+        }
+
+        /* Large Glow CTA Button */
+        .cta-button {
+            display: block;
+            width: 100%;
+            background: var(--cta-gradient);
+            color: #fff;
+            text-decoration: none;
+            padding: 16px;
+            border-radius: 12px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-align: center;
+            box-shadow: 0 4px 12px var(--glow-color), 0 0 15px rgba(232, 126, 67, 0.2);
+            transition: box-shadow 0.3s ease, transform 0.2s ease;
+            box-sizing: border-box;
+        }
+
+        .cta-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 16px rgba(232, 126, 67, 0.5), 0 0 20px rgba(232, 126, 67, 0.3);
+        }
+
+        .disclosure {
+            font-size: 0.75rem;
+            color: var(--text-muted);
+            font-style: italic;
+            margin-top: 12px;
+            text-align: center;
+            line-height: 1.4;
+        }
+
+        footer {
+            margin-top: 50px;
+            font-size: 0.8rem;
+            color: #4b5563;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="phone-container">
+        
+        <div class="profile-img-container">
+            <img class="profile-img" src="file:///C:/Users/pc/Downloads/Sykonist-Looney-Tunes-Old-Porky.256.png" alt="ClassicTechPork">
+        </div>
+        
+        <h1>@ClassicTechPork</h1>
+        <p class="bio">Classic Tech, Retro Vibes, Current PC Deals.</p>
+        
+        <div class="standard-links">
+            <a href="https://www.tiktok.com/@zeko_00001" target="_blank" class="link-card">
+                🎵 TikTok: @zeko_00001
+            </a>
+            
+            <a href="https://www.instagram.com/oldcartoonsbutgold/" target="_blank" class="link-card">
+                📷 Instagram: @oldcartoonsbutgold
+            </a>
+        </div>
+
+        <div class="affiliate-section">
+            <div class="affiliate-header">SPECIAL FEATURE: AFFILIATE PC OFFER</div>
+            
+            <div class="affiliate-content">
+                <div class="pc-image-wrapper">
+                    <div class="editors-pick-badge">
+                        <img src="file:///C:/Users/pc/Downloads/Sykonist-Looney-Tunes-Old-Porky.256.png" alt="Editor's Pick">
+                    </div>
+                    <img class="pc-image" src="file:///C:/Users/pc/Desktop/HlNKH75TiI3mS2SE74KP72rNfWbeyWpuf3txSL0v.jpg" alt="Viper Gaming PC Offer">
+                </div>
+                
+                <div class="offer-details">
+                    The 'Viper' Gaming PC<br>
+                    (AMD R5 3400G, 8GB, 240GB SSD)<br>
+                    - *Best Offer* 
+                </div>
+            </div>
+
+            <a href="https://www.licbplus.com.dz/product/pc-gamer-viper-amd-ryzen5-3400g-%7C-8gb-ram-%7C-240gb-ssd-%7C-650w?ref=OPSOQK5A" target="_blank" class="cta-button">
+                CHECK PRICE & AVAILABILITY
+            </a>
+            
+            <div class="disclosure">
+                *Disclosure: This link supports my content.*
+            </div>
+        </div>
+        
+        <footer>
+            &copy; 2026 @oldbutgoldcartoons.
+        </footer>
+    </div>
+
+</body>
+</html>
